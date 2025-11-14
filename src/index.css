@@ -1,13 +1,77 @@
-body {
+/* Reset & Layout Normalization */
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Typography smoothing */
+html {
+  scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Global Theme Variables */
+:root {
+  /* Colors */
+  --color-primary: #0a192f;
+  --color-secondary: #64ffda;
+  --color-text-light: #ccd6f6;
+  --color-text-dark: #8892b0;
+  --color-white: #ffffff;
+
+  /* Fonts */
+  --font-family-main: "Arial", "Helvetica", sans-serif;
+  --font-family-mono: "Courier New", monospace;
+
+  /* Font Sizes */
+  --font-size-xs: 0.75rem;   /* 12px */
+  --font-size-sm: 0.875rem;  /* 14px */
+  --font-size-md: 1rem;      /* 16px */
+  --font-size-lg: 1.125rem;  /* 18px */
+  --font-size-xl: 1.5rem;    /* 24px */
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 48px;
+
+  /* Radius */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+
+  /* Effects */
+  --shadow-md: 0 4px 10px rgba(0, 0, 0, 0.25);
+
+  /* Transitions — smoother & consistent */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.45s ease;
+
+  /* Nav */
+  --nav-height: 80px;
+}
+
+/* Global Defaults */
+body {
+  font-family: var(--font-family-main);
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  line-height: 1.6;
+  padding-top: var(--nav-height);
+}
+
+/* Make sure links behave nicely globally */
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--transition-normal);
+}
+
+/* Smoother scrolling for sections offset by navbar height */
+section {
+  scroll-margin-top: var(--nav-height);
 }

@@ -1,0 +1,103 @@
+:root {
+  --color-background-dark: #0a0a1a;
+  --color-border-subtle: #333;
+  --spacing-sm: 16px; 
+  --spacing-md: 24px;
+  --spacing-lg: 32px; 
+  --transition-fast: 0.15s ease-in-out;
+  --transition-normal: 0.3s ease;
+  
+  /* DEFAULT VALUES (for Desktop and larger screens) */
+  --icon-size: 70px; /* Large icons for desktop */
+  --icon-gap: clamp(48px, 8vw, 96px); /* Large gap for desktop */
+  --animation-duration: 60s; /* Slower animation for desktop */
+
+  --num-icons-per-set: 13; 
+  --monolithic-icon-color: #80e6ff; 
+}
+
+.tech-strip-wrapper {
+  width: 100%;
+  overflow: hidden;
+  background: var(--color-background-dark);
+  padding: var(--spacing-lg) 0; /* Large vertical padding for desktop */
+  border-top: 1px solid var(--color-border-subtle);
+  border-bottom: 1px solid var(--color-border-subtle);
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.1),
+              0 0 8px rgba(128, 0, 128, 0.1);
+}
+
+.tech-strip {
+  display: flex;
+  align-items: center;
+  gap: var(--icon-gap); /* Uses desktop gap by default */
+  white-space: nowrap;
+  animation: techSlide var(--animation-duration) linear infinite; /* Uses desktop animation speed by default */
+  min-width: max-content; /* This is generally more robust for infinite scroll */
+}
+
+.tech-strip img {
+  height: var(--icon-size); /* Uses desktop icon size by default */
+  width: var(--icon-size);
+  flex-shrink: 0;
+
+  filter:
+    grayscale(100%)
+    brightness(200%)
+    sepia(100%)
+    hue-rotate(140deg)
+    saturate(500%)
+    brightness(100%); 
+
+  opacity: 0.7;
+  transition: opacity var(--transition-normal), filter var(--transition-normal), transform var(--transition-normal);
+}
+
+.tech-strip img:hover {
+  opacity: 1;
+  filter:
+    grayscale(100%)
+    brightness(250%)
+    sepia(100%)
+    hue-rotate(140deg)
+    saturate(600%)
+    brightness(100%)
+    drop-shadow(0 0 10px var(--monolithic-icon-color));
+  transform: scale(1.1);
+}
+
+@keyframes techSlide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.tech-strip-wrapper:hover .tech-strip {
+  animation-play-state: paused;
+}
+
+/* --- Mobile Specific Adjustments --- */
+/* Adjust these values to what looks good on phones */
+@media (max-width: 768px) {
+  :root {
+    --icon-size: 50px; /* Smaller icons for tablets/phones */
+    --icon-gap: clamp(24px, 6vw, 48px); /* Smaller gap for tablets/phones */
+    --animation-duration: 40s; /* Faster animation for tablets/phones */
+  }
+  
+  .tech-strip-wrapper {
+    padding: var(--spacing-md) 0; /* Medium vertical padding on tablets/phones */
+  }
+}
+
+/* Optional: Even smaller for very small screens */
+@media (max-width: 480px) {
+  :root {
+    --icon-size: 35px; /* Even smaller icons for small phones */
+    --icon-gap: clamp(16px, 4vw, 32px); /* Even smaller gap for small phones */
+    --animation-duration: 30s; /* Faster animation for small phones */
+  }
+  
+  .tech-strip-wrapper {
+    padding: var(--spacing-sm) 0; /* Smallest vertical padding on very small phones */
+  }
+}

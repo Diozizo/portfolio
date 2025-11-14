@@ -1,0 +1,135 @@
+section {
+  width: 100%;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: var(--nav-height);
+  padding: 0 var(--spacing-lg);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.nav-bar {
+  transition: background-color var(--transition-normal), backdrop-filter var(--transition-normal);
+}
+
+.nav-bar.scrolled {
+  backdrop-filter: blur(10px);
+  background-color: rgba(10, 10, 26, 0.7); /* semi-transparent dark */
+}
+
+
+.nav-ul {
+  list-style: none;
+  display: flex;
+  gap: var(--spacing-lg);
+  position: relative;
+  z-index: 20;
+  transition: opacity var(--transition-normal), transform var(--transition-normal);
+}
+
+.nav-li a {
+  color: var(--color-text-light);
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-md);
+  position: relative;
+  padding-bottom: var(--spacing-xs);
+  transition: color var(--transition-normal);
+}
+
+.nav-li a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color-secondary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-normal);
+}
+
+.nav-li a:hover::after {
+  transform: scaleX(1);
+}
+
+.nav-li a:hover {
+  color: var(--color-secondary);
+}
+
+.hamburger-menu {
+  background: transparent;
+  border: none;
+  width: 32px;
+  height: 24px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.line {
+  background-color: var(--color-text-light);
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+}
+
+.nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(20px);
+  background: rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 5;
+  transition: opacity var(--transition-normal);
+}
+
+.nav-overlay.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+@media (max-width: 768px) {
+  .nav-bar {
+    justify-content: flex-end;
+  }
+
+  .nav-ul {
+    flex-direction: column;
+    align-items: flex-end;
+    padding: var(--spacing-lg);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-20px);
+    position: fixed; /* Changed from absolute to fixed for better mobile overlay interaction */
+    top: var(--nav-height);
+    left: 0;
+    width: 100%;
+  }
+
+  .nav-ul.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .hamburger-menu {
+    display: flex;
+  }
+}
