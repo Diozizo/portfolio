@@ -46,7 +46,6 @@
 }
 
 .project-card:hover {
-
   box-shadow: 
     0 0 10px var(--color-secondary), 
     0 0 25px rgba(0, 230, 230, 0.5),
@@ -79,7 +78,8 @@
   gap: var(--spacing-md);
 }
 
-.project-buttons a {
+.project-buttons a,
+.project-buttons .link-button {
   padding: var(--spacing-sm) var(--spacing-md);
   border: 2px solid var(--color-secondary);
   border-radius: var(--border-radius-md);
@@ -87,9 +87,14 @@
   text-decoration: none;
   font-weight: 600;
   transition: background var(--transition-normal), color var(--transition-normal);
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
 }
 
-.project-buttons a:hover {
+.project-buttons a:hover,
+.project-buttons .link-button:hover {
   background: var(--color-secondary);
-  color: var(--color-primary);
+  color: var(--color-primary-light);
 }
