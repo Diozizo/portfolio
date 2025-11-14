@@ -32,7 +32,6 @@ function Projects() {
                     <h3>JPO Web App</h3>
                     <p>Interactive full-stack app for university open days with a map, event listings, and a Flask + PostgreSQL backend.</p>
                     <div className="project-buttons">
-                        <button onClick={() => handleClick("JPO Web App")}>View Project</button>
                         <a href="https://github.com/Diozizo/projet_JPO" target="_blank" rel="noopener noreferrer">Source Code</a>
                     </div>
                 </div>
@@ -43,8 +42,6 @@ function Projects() {
                     <h3>Recipe Manager</h3>
                     <p>A modern recipe management platform built with Next.js and PostgreSQL, featuring CRUD, and a smooth UI.</p>
                     <div className="project-buttons">
-                        <button onClick={() => handleClick("Recipe Manager")}>View Project</button>
-                        <button onClick={() => handleClick("Recipe Manager Source")}>Source Code</button>
                     </div>
                 </div>
 
