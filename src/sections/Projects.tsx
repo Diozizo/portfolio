@@ -5,6 +5,9 @@ import Project_siam from '../assets/siam_game.png';
 import Project_recipe from '../assets/gestion_recette.png';
 
 function Projects() {
+    const handleClick = (project: string) => {
+        alert(`No live URL available for ${project}`);
+    };
 
     return (
         <section id="projects" className="projects-section">
@@ -18,8 +21,8 @@ function Projects() {
                     <h3>Siam Game</h3>
                     <p>A browser-based implementation of the Siam board game with movement logic, directional mechanics, and a clean UI.</p>
                     <div className="project-buttons">
-                        <a href='https://siamgame.netlify.app' target="_blank">View Project</a>
-                        <a href="https://github.com/Diozizo/siam-game" target="_blank">Source Code</a>
+                        <a href='https://siamgame.netlify.app' target="_blank" rel="noopener noreferrer">View Project</a>
+                        <a href="https://github.com/Diozizo/siam-game" target="_blank" rel="noopener noreferrer">Source Code</a>
                     </div>
                 </div>
 
@@ -27,10 +30,10 @@ function Projects() {
                 <div className='project-card'>
                     <img src={Project_jpog} alt='Project jpo' />
                     <h3>JPO Web App</h3>
-                    <p>interactive full-stack app for university open days with a map, event listings, and a Flask + PostgreSQL backend.</p>
+                    <p>Interactive full-stack app for university open days with a map, event listings, and a Flask + PostgreSQL backend.</p>
                     <div className="project-buttons">
-                        <a href="#" target='_blank'>View Project</a>
-                        <a href="https://github.com/Diozizo/projet_JPO" target="source_code">Source Code</a>
+                        <button onClick={() => handleClick("JPO Web App")}>View Project</button>
+                        <a href="https://github.com/Diozizo/projet_JPO" target="_blank" rel="noopener noreferrer">Source Code</a>
                     </div>
                 </div>
 
@@ -40,8 +43,8 @@ function Projects() {
                     <h3>Recipe Manager</h3>
                     <p>A modern recipe management platform built with Next.js and PostgreSQL, featuring CRUD, and a smooth UI.</p>
                     <div className="project-buttons">
-                        <a href="#" target='_blank'>View Project</a>
-                        <a href="#" target='_blank'>Source Code</a>
+                        <button onClick={() => handleClick("Recipe Manager")}>View Project</button>
+                        <button onClick={() => handleClick("Recipe Manager Source")}>Source Code</button>
                     </div>
                 </div>
 
