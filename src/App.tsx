@@ -1,5 +1,3 @@
-import React from 'react';
-import logo from './logo.svg';
 import Navbar from './sections/Navbar';
 import Hero from './sections/Hero'
 import Projects from './sections/Projects';
