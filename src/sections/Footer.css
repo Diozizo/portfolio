@@ -37,3 +37,11 @@
     height: 25px;
   }
 }
+
+.footer-socials img[alt="GitHub"] {
+  filter: invert(1) brightness(1.2);
+}
+
+.footer-socials img[alt="GitHub"]:hover {
+  filter: invert(1) brightness(1.5);
+}
