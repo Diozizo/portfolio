@@ -152,3 +152,8 @@
     width: 90%;
   }
 }
+
+
+.hero-socials img[alt="GitHub"] {
+  filter: invert(1) brightness(1.2);
+}

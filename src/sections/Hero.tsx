@@ -3,7 +3,7 @@ import './Hero.css';
 import heroImage from '../assets/unnamed.png';
 
 const socialLinks = [
-  { name: 'GitHub', url: 'https://github.com/Diozizo', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg' },
+  { name: 'GitHub', url: 'https://github.com/Diozizo', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg?color=white' },
   { name: 'LinkedIn', url: 'https://www.linkedin.com/in/dhiaeddine-merad-9126b4320/', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg' },
   { name: 'Email', url: 'mailto:meraddiaeddine08@gmail.com', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg' },
 ];
