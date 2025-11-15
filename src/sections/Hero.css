@@ -134,10 +134,19 @@
     text-align: center;
   }
 
+  .hero-buttons {
+    justify-content: center; /* Center the button */
+  }
+
+  .hero-socials {
+    justify-content: center; /* Center the icons */
+  }
+
   .hero-tech-badges {
     display: none;
   }
 }
+
 
 @media (max-width: 500px) {
   .hero-title {
